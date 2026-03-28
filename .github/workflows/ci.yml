@@ -34,13 +34,12 @@ jobs:
       # 4. Простая проверка: убедимся, что index.html существует
       - name: Check for index.html
         run: |
-          if [ -f index.html ]; then
-            echo "Index file exists. Build check passed."
-          else
-            echo "Index file is missing!"
-            exit 1
-          fi
-
+            if [ -f HTML_CSS/index.html ]; then
+                  echo "Index file found in HTML_CSS folder!"
+                else
+                  echo "Index file is missing in HTML_CSS!"
+                  exit 1
+                fi
       # 5. Здесь можно добавить запуск линтера или тестов
       - name: Run placeholder tests
         run: echo "Executing tests... All systems green."
